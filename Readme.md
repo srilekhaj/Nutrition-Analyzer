@@ -5,23 +5,23 @@ You can upload one meal to analyze or compare two meals side by side!
 
 ---
 
-## 🚀 Features
+## Features
 
-✅ **Single Meal Analysis**
+- **Single Meal Analysis**
 
 * Upload a food image.
 * AI identifies food items, estimates calories, and gives health advice.
 
-✅ **Meal Comparison Mode**
+- **Meal Comparison Mode**
 
 * Upload two meal images.
 * AI compares nutrients, health scores, and provides a final verdict on which meal is healthier.
 
-✅ **Interactive Visuals**
+- **Interactive Visuals**
 
 * Nutrition breakdown shown via interactive **Plotly bar charts**.
 
-✅ **Powered by Google Gemini**
+- **Powered by Google Gemini**
 
 * Uses the `gemini-2.5-flash` model for fast, multimodal (image + text) understanding.
 
@@ -38,7 +38,7 @@ You can upload one meal to analyze or compare two meals side by side!
 
 ---
 
-## ⚙️ Setup Instructions
+## Setup Instructions
 
 ### 1. Clone the Repository
 
@@ -80,11 +80,11 @@ GOOGLE_API_KEY=your_google_gemini_api_key_here
 ```
 
 You can obtain your Gemini API key from:
-👉 [https://aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey)
+ [https://aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey)
 
 ---
 
-## ▶️ Run the App
+## Run the App
 
 ```bash
 streamlit run app.py
@@ -94,7 +94,7 @@ Then open the app in your browser (usually [http://localhost:8501](http://localh
 
 ---
 
-## 🧩 App Structure
+## App Structure
 
 ```
 ai-nutrition-analyzer/
@@ -107,7 +107,7 @@ ai-nutrition-analyzer/
 
 ---
 
-## 🧪 How It Works
+## How It Works
 
 1. The user uploads one or two meal images.
 2. The image(s) and a natural-language **prompt** are sent to Gemini (`gemini-2.5-flash`).
@@ -127,7 +127,7 @@ ai-nutrition-analyzer/
 
 ---
 
-## 🩺 Example Use Cases
+## Example Use Cases
 
 * Nutrition tracking for gym or diet plans.
 * Comparing restaurant meals or homemade dishes.
