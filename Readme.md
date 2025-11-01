@@ -1,4 +1,4 @@
-# 🥗 AI Nutrition Analyzer
+# 🥗 AI Nutrition Analyzer [https://nutrition-analyzerz.streamlit.app/]
 
 **AI Nutrition Analyzer** is a Streamlit web app that uses **Google Gemini AI** to analyze meal images and provide detailed **nutrition insights**, **calorie estimates**, and **health advice**.
 You can upload one meal to analyze or compare two meals side by side!
