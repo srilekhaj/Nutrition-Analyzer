@@ -6,89 +6,16 @@ import requests
 import json
 import plotly.graph_objects as go
 
-st.markdown("""
-<style>
-
-/* --- GLASS EFFECT CONTAINERS --- */
-.glass-card {
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 18px;
-    padding: 0px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
-    margin-bottom: 25px;
-}
-
-/* Rounded images with soft shadow */
-img {
-    border-radius: 16px;
-    box-shadow: 0 4px 22px rgba(0,0,0,0.20);
-}
-
-/* Top-align all column elements */
-[data-testid="column"] {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-/* Align metrics left for cleaner visual */
-[data-testid="stMetric"] {
-    text-align: left !important;
-    padding: 5px 0 !important;
-}
-
-/* Reduce container side padding for modern layout */
-.block-container {
-    padding-top: 3rem !important;
-    padding-bottom: 1rem !important;
-    max-width: 1100px !important;
-}
-
-/* Typography polish */
-h1, h2, h3, h4 {
-    font-weight: 600;
-    letter-spacing: -0.5px;
-}
-
-/* Better readability */
-.stMarkdown, .stText {
-    line-height: 1.55rem;
-    font-size: 0.95rem;
-}
-
-/* Verdict card style */
-.verdict-box {
-    background: rgba(0, 255, 150, 0.15);
-    border-left: 4px solid #00c983;
-    padding: 18px;
-    border-radius: 14px;
-    backdrop-filter: blur(10px);
-    margin-top: 25px;
-}
-
-.fixed-meal-image {
-    width: 450px !important;
-    height: 300px !important;
-    object-fit: cover;      /* fills frame without stretching */
-    border-radius: 16px;
-    box-shadow: 0 4px 22px rgba(0,0,0,0.20);
-}
-            
-/* Optional: gradient app background */
-body {
-    background: linear-gradient(135deg, #dfe9f3 0%, #ffffff 100%);
-}
-            
-
-</style>
-""", unsafe_allow_html=True)
-
 
 st.title("🥗 AI Nutrition Analyzer")
 tab1, tab2 = st.tabs(["📸 Single Meal Analysis", "⚖️ Comparison Mode"])
+
+def load_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+load_css("css/styles.css")
+
 def parse_response(response):
     if response is None:
         return None
@@ -160,7 +87,7 @@ def main():
                 "prompt": prompt
             }
             result = requests.post(url, files=files, data=data)
-            st.subheader("🍱 Food Analysis Report")
+            st.subheader("🍱 𝙁𝙤𝙤𝙙 𝘼𝙣𝙖𝙡𝙮𝙨𝙞𝙨 𝙍𝙚𝙥𝙤𝙧𝙩")
             # st.markdown(result) response object <Response [200]>
             output_json = result.json()
             result_text = output_json.get("response", "")
