@@ -30,36 +30,10 @@ def predict():
     image_file = request.files['image']
     prompt = request.form['prompt']
     image = Image.open(image_file)
-    # # image = Image.open(io.BytesIO(image_file.read()))
-    # response_text = get_response(image, prompt)
-
-    # image = Image.open(io.BytesIO(image_file.read()))
 
     prompt = request.form.get("prompt", "")
     result = get_response(image, prompt)
     return jsonify({"response": result})
-
-# @app.route('/compare', methods=['POST'])
-# def compare():
-#     meal1 = request.files.get('image1')
-#     meal2 = request.files.get('image2')
-#     prompt = request.form.get("prompt", "")
-#     if not meal1 or not meal2:
-#         return jsonify({"error": "Both meal images are required"}), 400
-    
-#     try:
-#         img1 = Image.open(meal1)
-#     except Exception as e:
-#         print(f"Error reading Meal 1 image: {e}")
-#     try:
-#         img2 = Image.open(meal2)
-#     except Exception as e:
-#         print(f"Error reading Meal 2 image: {e}")
-    
-#     response1 = get_response(img1, prompt)
-#     response2 = get_response(img2, prompt)
-#     return jsonify({"meal1_response": response1, "meal2_response": response2})
-
 
 @app.route('/compare', methods=['POST'])
 def compare():
